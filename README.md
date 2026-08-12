@@ -16,3 +16,24 @@ The objective of this project is to design a compact 4-bit ALU capable of perfor
 - Verilog testbench
 - Functional simulation and verification
 - Xilinx Vivado implementation
+## Simulation Results
+
+The ALU was simulated using the Xilinx Vivado simulator.
+
+The testbench verifies the following operations:
+
+- Addition
+- Subtraction
+- AND
+- OR
+- XOR
+- NOT
+- Left Shift
+- Right Shift
+
+Test inputs:
+
+- A = `0101` (5)
+- B = `0011` (3)
+
+The simulation results were observed in the Vivado Tcl Console.
