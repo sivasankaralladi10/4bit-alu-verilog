@@ -31,6 +31,7 @@ CLA_4bit CLA_SUB (
 
 always @(*) begin
     case (Sel)
+
         3'b000: begin // ADD
             Result = Sum_add;
             Carry = Cout_add;
@@ -55,3 +56,28 @@ always @(*) begin
             Result = A ^ B;
             Carry = 0;
         end
+
+        3'b101: begin // NOT
+            Result = ~A;
+            Carry = 0;
+        end
+
+        3'b110: begin // LEFT SHIFT
+            Result = A << 1;
+            Carry = A[3];
+        end
+
+        3'b111: begin // RIGHT SHIFT
+            Result = A >> 1;
+            Carry = A[0];
+        end
+
+        default: begin
+            Result = 4'b0000;
+            Carry = 0;
+        end
+
+    endcase
+end
+
+endmodule
